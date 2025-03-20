@@ -22,6 +22,17 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/draw", (req, res) => {
+  const sideLength = req.query.sideLength;
+  res.render("draw", {sideLength});
+});
+app.post("/draw", (req, res) => {
+  const sideLength = req.body.sideLength;
+  res.render("draw", {sideLength});
+});
+
+
+
 // Create express route binder for draw.hbs and get the data from the url as parameters
 // that came from index.hbs
 
